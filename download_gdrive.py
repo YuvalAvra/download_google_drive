@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 Guide for usage:
 In your terminal, run the command:
@@ -42,12 +43,12 @@ def download_file_from_google_drive(id, destination):
 
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) is not 3:
-        print("Usage: python google_drive.py drive_file_id destination_file_path")
+    from sys import argv
+    if len(argv) is not 3:
+        print(f"[+] Usage: {argv[0]} drive_file_id destination_file_path")
     else:
         # TAKE ID FROM SHAREABLE LINK
-        file_id = sys.argv[1]
+        file_id = argv[1]
         # DESTINATION FILE ON YOUR DISK
-        destination = sys.argv[2]
+        destination = argv[2]
         download_file_from_google_drive(file_id, destination)
